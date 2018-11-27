@@ -1,0 +1,99 @@
+﻿@{
+    ViewData["Title"] = "Contact";
+}
+<h2>@ViewData["Title"]</h2>
+<h3>@ViewData["Message"]</h3>
+                            
+
+
+
+
+<div class="contacts-form">
+    <div class="row contacts-form-area">
+        <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 contacts-form-col">
+            <div class="row contacts-form-area">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 contacts-form-col">
+                    <div class="contacts-form-field">
+                        <div class="form-item webform-component webform-component-textfield webform-component--naam form-group form-item form-item-submitted-naam form-type-textfield form-group">
+                            <label class="control-label" for="edit-submitted-naam">Name:</label>
+                            <input placeholder="Name:" class="form-control form-text" type="text" id="edit-submitted-naam" name="submitted[naam]" value="" size="60" maxlength="128">
+                        </div>
+                    </div>
+                    <div class="contacts-form-field">
+                        <div class="form-item webform-component webform-component-textfield webform-component--bedrijf form-group form-item form-item-submitted-bedrijf form-type-textfield form-group">
+                            <label class="control-label" for="edit-submitted-bedrijf">Company:</label>
+                            <input placeholder="Company:" class="form-control form-text" type="text" id="edit-submitted-bedrijf" name="submitted[bedrijf]" value="" size="60" maxlength="128">
+                        </div>
+                    </div>
+                    <div class="contacts-form-field">
+                        <div class="form-item webform-component webform-component-textfield webform-component--functie form-group form-item form-item-submitted-functie form-type-textfield form-group">
+                            <label class="control-label" for="edit-submitted-functie">Job Title:</label>
+                            <input placeholder="Job Title:" class="form-control form-text" type="text" id="edit-submitted-functie" name="submitted[functie]" value="" size="60" maxlength="128">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 contacts-form-col">
+                    <div class="contacts-form-field">
+                        <div class="form-item webform-component webform-component-textfield webform-component--telefoon form-group form-item form-item-submitted-telefoon form-type-textfield form-group">
+                            <label class="control-label" for="edit-submitted-telefoon">Phone:</label>
+                            <input placeholder="Phone:" class="form-control form-text" type="text" id="edit-submitted-telefoon" name="submitted[telefoon]" value="" size="60" maxlength="128">
+                        </div>
+                    </div>
+                    <div class="contacts-form-field">
+                        <div class="form-item webform-component webform-component-textfield webform-component--email form-group form-item form-item-submitted-email form-type-textfield form-group">
+                            <label class="control-label" for="edit-submitted-email">E-mail: <span class="form-required" title="This field is required.">*</span></label>
+                            <input required="required" placeholder="E-mail:" class="form-control form-text required" type="text" id="edit-submitted-email" name="submitted[email]" value="" size="60" maxlength="128">
+                        </div>
+                    </div>
+                    <div class="contacts-form-field">
+                        <div class="form-item webform-component webform-component-textfield webform-component--subject form-group form-item form-item-submitted-subject form-type-textfield form-group">
+                            <label class="control-label" for="edit-submitted-subject">Subject:</label>
+                            <input placeholder="Subject:" class="form-control form-text" type="text" id="edit-submitted-subject" name="submitted[subject]" value="" size="60" maxlength="128">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 contacts-form-col">
+            <div class="contacts-form-field">
+                <div class="form-item webform-component webform-component-textarea webform-component--bericht form-group form-item form-item-submitted-bericht form-type-textarea form-group">
+                    <label class="control-label" for="edit-submitted-bericht">Message: <span class="form-required" title="This field is required.">*</span></label>
+                    <div class="form-textarea-wrapper resizable textarea-processed resizable-textarea"><textarea required="required" placeholder="Message:" class="form-control form-textarea required" id="edit-submitted-bericht" name="submitted[bericht]" cols="60" rows="5"></textarea><div class="grippie"></div></div>
+                </div>
+            </div>
+            <div class="contacts-form-field">
+                <div class="captcha">
+                    <input type="hidden" name="captcha_sid" value="233552">
+                    <input type="hidden" name="captcha_token" value="bf7435252284afa85f012f0b9e57f3e4">
+                    <input type="hidden" name="captcha_response" value="Google no captcha">
+                    <div class="g-recaptcha" data-sitekey="6LfzXUwUAAAAAE-Ko_yAMvItea_oHCuRDVGPNo4D" data-theme="light" data-type="image"><div style="width: 304px; height: 78px;"><div><iframe src="https://www.google.com/recaptcha/api2/anchor?ar=2&amp;k=6LfzXUwUAAAAAE-Ko_yAMvItea_oHCuRDVGPNo4D&amp;co=aHR0cHM6Ly93d3cuZmlubnByLmNvbTo0NDM.&amp;hl=en&amp;type=image&amp;v=v1542004393985&amp;theme=light&amp;size=normal&amp;cb=b8vz9m27nuln" width="304" height="78" role="presentation" name="a-zbdqmbl6a0jy" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe></div><textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div></div>
+                </div>            <button class="webform-submit button-primary btn btn-primary form-submit" type="submit" name="op" value="Submit">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+<footer align="center">
+    @*<address>
+        SharingIsCaring<br />
+        Alameda Mazareedo 47,48009 Bilbo, Bizkaia <br />
+        <abbr title="Phone">P:</abbr>
+        +34 944 24 22 23
+    </address>*@
+
+    @*Google Maps*@
+    <div id="googleMap" style="width:100%;height:200px;"></div>
+
+    <script>
+        function myMap() {
+            var mapProp = {
+                center: new google.maps.LatLng(43.2676777, -2.9343755),
+                zoom: 17,
+            };
+            var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+        }
+    </script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsXlDUpCDPBZrjf7-SbapSDEYa_u9uU28&callback=myMap"></script>
+    </div>
+
+</footer>

@@ -1,0 +1,53 @@
+﻿@using Microsoft.AspNetCore.Http.Features
+
+@{
+    var consentFeature = Context.Features.Get<ITrackingConsentFeature>();
+    var showBanner = !consentFeature?.CanTrack ?? false;
+    var cookieString = consentFeature?.CreateConsentCookie();
+}
+
+@if (showBanner)
+{
+    <nav id="cookieConsent" class="navbar navbar-default navbar-fixed-top" role="alert">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#cookieConsent .navbar-collapse">
+                    <span class="sr-only">Toggle cookie consent banner</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <span class="navbar-brand"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></span>
+            </div>
+            <div class="collapse navbar-collapse">
+                <p class="Cookies">
+                    Use this space to summarize your privacy and cookie use policy.   A cookie is a small piece of information that is placed on your computer when you visit certain websites. When we refer to “cookies” we include other technologies with similar purposes, such as tags and identifiers. Find out more about the use of cookies on http://www.cookiecentral.com/.
+
+                    6.2 When you first visit our sites using a new browser, or if you visit in private browsing mode, we will provide you with a cookies permission banner seeking your consent to use of cookies as required by law. From this banner you will be able to access our cookies management tool. By clicking OK or clicking through to any part of the site, we will start to manage your visit using cookies.
+
+                    6.3 We use the following types of cookie, as will your browser:
+
+                    (1) Analytics cookies that anonymously remember your computer or mobile device when you visit our website. They keep track of browsing patterns and help us to build up a profile of how our readers use the website. We use that information for customer analytics and to serve advertisements that we think might be of particular interest to you on our and other websites (see Section 7.5). Your browser may use similar cookies for similar purposes and to serve advertisements for others.
+
+                    (2) Service cookies that help us to make our website work as efficiently as possible; remember your registration and login details; remember your settings preferences; to detect what device you are using and adapt how we present our services according to the screen size of that device; and meter the number of pages you view for the purpose of administering subscriptions to The Telegraph.
+
+                    (3) Third party advertising and analytics cookies, which are placed by or on behalf of independent advertisers who are advertising on our site. These cookies may be placed within the advertisement and elsewhere on our site by us or by your browser. They are anonymous – they cannot be used to identify individuals, but they can also allow the advertiser or your browser to tailor advertising to you when you visit other websites using the same browser. They are used for statistical analysis by allowing the advertiser to count how many people have seen their advertisement or have seen it more than once, to make sure you are not repeatedly served with the same advertising messages.
+
+                    6.3 We have no access to third party cookies and third party organisations have no access to ours. The third party organisations that place cookies, including your browser (such as Google) and the third party companies who pay for advertising and analytics services using this information, will have their own privacy policies.
+                </p>
+                <div class="navbar-right">
+                    <a asp-controller="Home" asp-action="Privacy" class="btn btn-info navbar-btn">Learn More</a>
+                    <button type="button" class="btn btn-default navbar-btn" data-cookie-string="@cookieString">Accept</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <script>
+        (function () {
+            document.querySelector("#cookieConsent button[data-cookie-string]").addEventListener("click", function (el) {
+                document.cookie = el.target.dataset.cookieString;
+                document.querySelector("#cookieConsent").classList.add("hidden");
+            }, false);
+        })();
+    </script>
+}
